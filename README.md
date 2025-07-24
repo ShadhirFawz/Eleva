@@ -82,9 +82,9 @@ npm run dev
 
  ## 🚀 Libraries used 🚀
 
- - 📱 [ReactIcons/Fa]([https://www.mongodb.com/](https://www.npmjs.com/package/react-icons))
- - 📱 [Framer Motion]([https://expressjs.com/](https://motion.dev/docs/react))
- - 📱 [HeroIcons]([https://react.dev/](https://heroicons.com/))
+ - 📱 [ReactIcons/Fa](https://www.mongodb.com/](https://www.npmjs.com/package/react-icons)
+ - 📱 [Framer Motion](https://expressjs.com/](https://motion.dev/docs/react)
+ - 📱 [HeroIcons](https://react.dev/](https://heroicons.com/)
 
 ## Endpoints
 
