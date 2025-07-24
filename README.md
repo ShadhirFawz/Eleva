@@ -1,6 +1,6 @@
-# REST Countries API Documentation
+# Eleva (Elevate knowledge)
 
-ExamApp is a web-based examination platform built with React and Tailwind CSS, designed for users to take exams, view results, and manage their sessions securely. The application features a modern, responsive UI with a dark, semi-transparent theme (bg-gray-800/60, backdrop-blur-sm, bg-gradient-to-br). Users are locked into the exam attempt page to prevent navigation away, ensuring a focused testing environment. The app integrates with a backend API for fetching exams, submitting answers, and retrieving results, with authentication handled via JWT.
+Eleva is a web-based examination platform built with React and Tailwind CSS, designed for users to take exams, view results, and manage their sessions securely. The application features a modern, semi-transparent theme (bg-gray-800/60, backdrop-blur-sm, bg-gradient-to-br). Users are locked into the exam attempt page to prevent navigation away, ensuring a focused testing environment. The app integrates with a backend API for fetching exams, submitting answers, and retrieving results, with authentication handled via JWT.
 React: JavaScript library for building user interfaces.
 React Router: For client-side routing (/, /results, /attempt, /login).
 Tailwind CSS: Utility-first CSS framework for styling (custom theme with primary: #2563eb, error: #dc2626).
