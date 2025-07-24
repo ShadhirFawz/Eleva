@@ -17,7 +17,7 @@ const app = express();
 
 
 app.use(cors({
-  origin: 'https://eleva-client.vercel.app/',
+  origin: 'https://eleva-client.vercel.app',
   credentials: true
 }));
 app.use(express.json());
