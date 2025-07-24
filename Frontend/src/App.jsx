@@ -4,7 +4,7 @@ import { AuthContext, AuthProvider } from './context/AuthContext';
 import Home from './pages/Home';
 import Results from './pages/Results';
 import Login from './pages/Login';
-import Navbar from './components/Navbar';
+import Navbar from './components/NavBar';
 
 function PrivateRoute({ children }) {
   const { user, loading } = useContext(AuthContext);
