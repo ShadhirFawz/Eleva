@@ -40,6 +40,8 @@ cd Eleva (Elevate knowledge)
 ```sh
 cd backend
 npm install
+node src/seed/userSeed.js //seed test user
+node src/seed/examSeed.js  //seed test exam papers with questions
 ```
 
 ### **3. Get to the frontend for frontend dependency installation**
