@@ -1,6 +1,11 @@
 # Eleva (Elevate knowledge)
 
 Eleva is a web-based examination platform built with React and Tailwind CSS, designed for users to take exams, view results, and manage their sessions securely. The application features a modern, semi-transparent theme (bg-gray-800/60, backdrop-blur-sm, bg-gradient-to-br). Users are locked into the exam attempt page to prevent navigation away, ensuring a focused testing environment. The app integrates with a backend API for fetching exams, submitting answers, and retrieving results, with authentication handled via JWT.
+
+## Screenshots  🌈 
+
+![Login](https://github.com/ShadhirFawz/Eleva/blob/main/Frontend/src/assets/screenshots/Login.png)
+
 React: JavaScript library for building user interfaces.
 React Router: For client-side routing (/, /results, /attempt, /login).
 Tailwind CSS: Utility-first CSS framework for styling (custom theme with primary: #2563eb, error: #dc2626).
@@ -11,14 +16,11 @@ State Management:
 React Context: For authentication state (AuthContext).
 React Hooks: useState, useEffect, useNavigate, useContext.
 
-
 HTTP Client:
 Axios: For API requests to fetch exams, submit answers, and retrieve results.
 
-
 Assets:
 Custom logo (ELogo.png) for branding in Navbar and cards.
-
 
 Fonts:
 'Georgia', serif: For titles (e.g., exam titles, page headings).
