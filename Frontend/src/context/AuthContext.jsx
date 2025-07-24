@@ -1,55 +1,51 @@
-// src/context/AuthContext.jsx
-import { createContext, useState, useEffect, useContext } from "react";
+import React, { createContext, useState, useEffect } from 'react';
+import axios from 'axios';
 
-const AuthContext = createContext();
+export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [token, setToken] = useState(localStorage.getItem("token") || "");
-  const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")) || null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    localStorage.setItem("token", token);
-    localStorage.setItem("user", JSON.stringify(user));
-  }, [token, user]);
+    const token = localStorage.getItem('token');
+    if (token) {
+      axios.get(`${import.meta.env.VITE_API_URL}/auth/me`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+        .then(response => {
+          setUser(response.data.user);
+          setLoading(false);
+        })
+        .catch(() => {
+          localStorage.removeItem('token');
+          setLoading(false);
+        });
+    } else {
+      setLoading(false);
+    }
+  }, []);
 
   const login = async (email, password) => {
-    setLoading(true);
-    setError("");
     try {
-      const res = await fetch("/api/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
-      });
-
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.message || "Login failed");
-
-      setToken(data.token);
-      setUser(data.user);
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/auth/login`, { email, password });
+      localStorage.setItem('token', response.data.token);
+      setUser(response.data.user);
+      return true;
+    } catch (error) {
+      console.error('Login failed:', error);
+      return false;
     }
   };
 
   const logout = () => {
-    setToken("");
+    localStorage.removeItem('token');
     setUser(null);
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
   };
 
   return (
-    <AuthContext.Provider
-      value={{ token, user, login, logout, isAuthenticated: !!token, loading, error }}
-    >
+    <AuthContext.Provider value={{ user, loading, login, logout }}>
       {children}
     </AuthContext.Provider>
   );
 };
-
-export const useAuth = () => useContext(AuthContext);
