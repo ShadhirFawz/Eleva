@@ -6,6 +6,7 @@ import ExamConfirmation from '../components/ExamConfirmationMConfirmation';
 import ExamAttempt from '../components/ExamAttempt';
 import { AuthContext } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
+import { PencilSquareIcon } from '@heroicons/react/24/outline';
 
 function Home() {
   const [exams, setExams] = useState([]);
@@ -58,7 +59,7 @@ function Home() {
   };
 
   return (
-    <div className="relative min-h-screen text-white overflow-hidden bg-gradient-to-br from-gray-900 via-gray-950 to-gray-800">
+    <div className="relative min-h-screen text-white overflow-hidden bg-gradient-to-br from-gray-700 via-gray-200 to-gray-700">
       {showConfirmation && selectedExam && (
         <ExamConfirmation exam={selectedExam} onConfirm={handleConfirm} onCancel={handleCancel} />
       )}
@@ -71,17 +72,18 @@ function Home() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-3xl font-light font-serif text-gray-100 mb-8"
+            className="text-3xl font-light font-serif text-gray-50 mt-4 mb-8 flex items-center" // Added flex and items-center
           >
             Available Exams
+            <PencilSquareIcon className="w-8 h-8 ml-2" /> {/* Adjusted size and added margin-left */}
           </motion.h1>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 cursor-pointer">
             {exams.map((exam, index) => (
               <motion.div
                 key={exam._id}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.2, delay: index * 0.05 }}
                 whileHover={{ scale: 1.02 }}
               >
                 <ExamCard exam={exam} onTakeExam={handleTakeExam} useBlurBackground />

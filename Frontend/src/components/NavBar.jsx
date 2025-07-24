@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
+import { ArrowRightEndOnRectangleIcon } from '@heroicons/react/24/outline';
 import { motion } from 'framer-motion';
 import ELogo from '../assets/ELogo.png';
 
@@ -25,12 +26,12 @@ function Navbar() {
       {isNotLoginPage && (
         <div className="flex items-center space-x-4">
           <div className="bg-gray-700 rounded-md flex space-x-2 px-4 py-1.5">
-            <div className="hover:bg-gray-600/50 rounded-md px-2 py-1 cursor-pointer">
+            <div className="hover:bg-gray-600/50 rounded-md px-3 py-1 cursor-pointer">
               <Link to="/" className="text-gray-300 hover:text-white transition-colors" style={{ fontFamily: "'Gill Sans', sans-serif" }}>
                 Home
               </Link>
             </div>
-            <div className="hover:bg-gray-600/50 rounded-md px-2 py-1 cursor-pointer">
+            <div className="hover:bg-gray-600/50 rounded-md px-3 py-1 cursor-pointer">
               <Link to="/results" className="text-gray-300 hover:text-white transition-colors" style={{ fontFamily: "'Gill Sans', sans-serif" }}>
                 Results
               </Link>
@@ -42,7 +43,8 @@ function Navbar() {
               className="flex items-center px-4 py-2 rounded-md font-medium transition duration-200 cursor-pointer bg-error text-white hover:bg-indigo-800"
               style={{ fontFamily: "'Gill Sans', sans-serif" }}
             >
-              Logout ({user.name})
+              <ArrowRightEndOnRectangleIcon className='w-6' />
+              Logout
             </button>
           ) : (
             <Link
