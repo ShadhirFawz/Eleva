@@ -125,7 +125,7 @@ function Login() {
             </p>
           </div>
 
-          <div className="bg-gray-800/60 backdrop-blur-sm rounded-xl shadow-xl pb-4 sm:pb-12 pt-2 px-5 sm:px-7 border border-gray-700/50 mt-4 sm:mt-4 w-full max-w-md">
+          <div className="bg-gray-800/60 backdrop-blur-sm rounded-xl shadow-xl pb-4 sm:pb-7 pt-2 px-5 sm:px-7 border border-gray-700/50 mt-4 sm:mt-4 w-full max-w-md">
             {error && (
               <div className="mb-0 p-3 bg-red-900/30 border border-red-700/50 rounded-lg">
                 <div className="flex items-center text-red-300">
@@ -215,7 +215,7 @@ function Login() {
                 )}
               </button>
             </form>
-            <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-gray-700/50">
+            <div className="mt-6 sm:mt-5 pt-4 sm:pt-6 border-t border-gray-700/50">
               <p className="text-center text-sm text-gray-400">
                 Need help?{' '}
                 <Link to="/support" className="text-primary hover:text-blue-300 transition-colors">
