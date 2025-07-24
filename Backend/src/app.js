@@ -4,8 +4,6 @@ import cors from "cors";
 
 dotenv.config();
 
-import connectDB from "./config/db.js";
-
 // Routes
 import authRoutes from "./routes/authRoutes.js";
 import examRoutes from "./routes/examRoutes.js";
@@ -21,7 +19,6 @@ app.use(cors({
   credentials: true
 }));
 app.use(express.json());
-connectDB();
 
 // Mount routes
 app.use("/api/auth", authRoutes);
