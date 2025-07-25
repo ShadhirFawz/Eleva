@@ -21,6 +21,9 @@ app.use(cors({
 app.use(express.json());
 
 // Mount routes
+app.get('/', (req, res) => {
+  res.status(200).json({ message: 'ExamApp Backend is running' });
+});
 app.use("/api/auth", authRoutes);
 app.use("/api/exams", examRoutes);
 // app.use("/api/questions", questionRoutes);
